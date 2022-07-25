@@ -1,6 +1,6 @@
 import {Controller, DependencyImpl, RouteType} from "@peu77/expresswrapper"
 import {LinkService} from "./LinkService";
-import {urlDependencyOption, uuidDependencyOption} from "../../dependencyOptions/DependencyOptions";
+import {urlDependencyOption} from "../../dependencyOptions/DependencyOptions";
 
 export const LinkController: Controller = {
     prefix: "/link",
@@ -20,9 +20,7 @@ export const LinkController: Controller = {
             path: "get",
             type: RouteType.GET,
             dependencies: [
-                new DependencyImpl("id", [
-                    uuidDependencyOption
-                ])
+                new DependencyImpl("id", [])
             ],
             guards: []
         }

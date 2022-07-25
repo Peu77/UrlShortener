@@ -1,15 +1,14 @@
-import {Entity, PrimaryGeneratedColumn, Column, CreateDateColumn} from "typeorm"
+import {Entity, Column, PrimaryColumn} from "typeorm"
 
 @Entity()
 export class Link {
 
-    @PrimaryGeneratedColumn("uuid")
+    @PrimaryColumn()
     id: string
 
     @Column()
     url: string
 
-    @CreateDateColumn()
+    @Column()
     createAt: Date
-
 }
