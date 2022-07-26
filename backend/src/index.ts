@@ -1,9 +1,12 @@
 import {AppDataSource} from "./data-source"
 import {initControllers} from "@peu77/expresswrapper";
 import express from "express"
-import {LinkController} from "./controller/user/LinkController";
+import {LinkController} from "./controller/link/LinkController";
 import cors from "cors";
+import {UserController} from "./controller/user/UserController";
+import env from "@bergerapi/env";
 
+env();
 
 AppDataSource.initialize().then(async () => {
     console.log("Database initialized")
@@ -12,17 +15,7 @@ AppDataSource.initialize().then(async () => {
 
     app.listen(4000, () => {
         initControllers(app, [
-            LinkController
+            LinkController, UserController
         ])
     })
 }).catch(error => console.log(error))
-
-
-const createAt = new Date().getTime() - 1000 * 60 * 3
-const now = Date.now()
-
-// check if createAt is more than 2 minutes ago
-
-if (now - createAt > 2 * 60 * 1000) {
-    console.log("two minutes ago")
-}

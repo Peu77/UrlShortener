@@ -13,6 +13,7 @@ function generateRandomString(length: number): string {
     return text;
 }
 
+// delete all links which older than 1 hour
 function checkExpired() {
     AppDataSource.manager.find(Link).then(links => {
         const now: number = Date.now()
