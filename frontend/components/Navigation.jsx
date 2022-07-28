@@ -1,7 +1,6 @@
 import style from "./Navigation.module.scss"
 import User from "./user.svg"
 import {Dropdown} from "@nextui-org/react";
-import Link from "next/link";
 import {useRouter} from "next/router";
 
 export default () => {

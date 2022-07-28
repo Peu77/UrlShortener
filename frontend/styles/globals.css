@@ -12,3 +12,9 @@ a {
 li {
     list-style: none;
 }
+
+a{
+    color: #3333ff;
+
+    text-decoration: underline;
+}
