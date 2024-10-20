@@ -2,8 +2,13 @@ import style from "./Auth.module.scss"
 import Link from "next/link";
 
 export default () => {
+    function submit(event) {
+        event.preventDefault();
+        console.log("submit");
+    }
+
     return (
-        <form className={style.form}>
+        <form className={style.form} onSubmit={submit}>
             <h1>Register</h1>
             <input type="text" placeholder="Username"/>
             <input type="password" placeholder="Password"/>

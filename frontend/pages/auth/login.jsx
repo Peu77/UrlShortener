@@ -1,9 +1,22 @@
 import style from "./Auth.module.scss"
 import Link from "next/link";
+import {useRouter} from "next/router";
 
 export default () => {
+    const router = useRouter();
+
+    function submit(event) {
+        event.preventDefault();
+        console.log("submit");
+    }
+
+    function reset(event){
+        event.preventDefault();
+        router.push("/")
+    }
+
     return (
-        <form className={style.form}>
+        <form className={style.form} onReset={reset} onSubmit={submit}>
             <h1>Login</h1>
             <input type="text" placeholder="Username"/>
             <input type="password" placeholder="Password"/>

@@ -4,6 +4,7 @@ import express from "express"
 import {LinkController} from "./controller/link/LinkController";
 import cors from "cors";
 import {UserController} from "./controller/user/UserController";
+// @ts-ignore
 import env from "@bergerapi/env";
 
 env();
